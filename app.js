@@ -21,7 +21,7 @@
 
   const formatSize = bytes => {
     if (!Number.isFinite(bytes) || bytes <= 0) return "";
-    const units = ["Б", "МБ", "ГБ"];
+    const units = ["Б", "КБ", "МБ", "ГБ"];
     let value = bytes;
     let unit = 0;
     while (value >= 1024 && unit < units.length - 1) {
