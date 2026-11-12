@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111019">
+  <meta name="description" content="Информация о данных, которые обрабатывают сайт Slipstream VPN и приложение.">
+  <title>Конфиденциальность — Slipstream VPN</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><div class="container header-inner">
+    <a class="brand" href="index.html"><img src="favicon.svg" alt="" width="40" height="40"><span>Slipstream <span class="brand-light">VPN</span></span></a>
+    <details class="mobile-nav"><summary aria-label="Открыть меню"><span></span><span></span><span></span></summary><nav class="nav nav-mobile" aria-label="Основная навигация"><a href="index.html">Главная</a><a href="downloads.html">Скачать</a><a href="guide.html">Инструкция</a><a aria-current="page" href="privacy.html">Конфиденциальность</a></nav></details>
+    <nav class="nav nav-desktop" aria-label="Основная навигация"><a href="index.html">Главная</a><a href="downloads.html">Скачать</a><a href="guide.html">Инструкция</a><a aria-current="page" href="privacy.html">Конфиденциальность</a></nav>
+    <a class="button button-small button-secondary header-cta" href="downloads.html">Скачать</a>
+  </div></header>
+
+  <main class="container page-main">
+    <div class="breadcrumbs"><a href="index.html">Главная</a><span aria-hidden="true">/</span><span>Конфиденциальность</span></div>
+    <section class="page-intro"><span class="eyebrow">Прозрачная обработка данных</span><h1>Конфиденциальность</h1><p class="lead">Ниже описано, что делает этот сайт и какие данные обрабатывает приложение Slipstream VPN.</p><p class="micro-copy">Последнее обновление: 5 ноября 2026 года</p></section>
+    <article class="prose policy-content">
+      <h2>Сайт загрузки</h2>
+      <p>Сайт — статические HTML-, CSS- и JavaScript-файлы. Он не использует аккаунты, формы, рекламные идентификаторы, аналитические скрипты или собственные cookies.</p>
+      <p>Чтобы показать актуальные версии и загрузки, страница отправляет браузерный запрос к публичному GitHub Releases API. При переходе по ссылкам релизов или скачивании файлов запрос обслуживается GitHub. GitHub может обрабатывать сетевые журналы согласно своей <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">политике конфиденциальности</a>.</p>
+      <p>Сайт не запрашивает и не передаёт ссылки VPN-профилей, пароли, UUID или ключи серверов.</p>
+
+      <h2>Данные в Android-приложении</h2>
+      <p>Импортированные профили, URL подписок, выбранный сервер и настройки маршрутизации сохраняются локально на устройстве в зашифрованном виде с помощью AES-GCM и Android Keystore.</p>
+      <p>При обновлении приложение обращается к GitHub Releases API; при загрузке новой версии получает APK из релиза и проверяет его пакет, версию и сертификат подписи. Токен доступа GitHub в приложении не хранится.</p>
+      <p>URL HTTPS-подписки загружается с указанного пользователем сервера при импорте и обновлении. Поставщик подписки может видеть сетевой запрос. Сам VPN-сервер, к которому вы подключаетесь, обрабатывает трафик в соответствии со своими настройками и правилами.</p>
+      <p>Приложение не отправляет разработчику диагностические события или содержимое профилей через собственный сервер. Системные журналы Android и библиотек могут храниться на устройстве.</p>
+
+      <h2>Настольное приложение</h2>
+      <p>Настольный клиент держит импортированные профили в памяти процесса. Для запуска sing-box создаётся временный файл конфигурации с данными профиля; приложение удаляет его после отключения или закрытия. Не завершайте процесс принудительно во время подключения, если это возможно.</p>
+
+      <h2>Ваш выбор</h2>
+      <p>Вы можете удалить сохранённые профили в приложении или удалить локальные данные Slipstream из системных настроек устройства. Чтобы узнать, как сообщить об ошибке, не раскрывая секреты профиля, см. <a href="guide.html#troubleshooting">инструкцию по устранению проблем</a>.</p>
+
+      <h2>Изменения и контакты</h2>
+      <p>Эта страница может обновляться вместе с приложением. Вопросы о конфиденциальности можно задать через <a href="https://github.com/Nymos-oz/Slipstream-VPN-Downloads/issues" target="_blank" rel="noopener noreferrer">GitHub Issues</a>. Не публикуйте там секретные данные VPN.</p>
+      <p class="notice"><span class="notice-symbol" aria-hidden="true">i</span><span>Это описание объясняет работу данного проекта и не заменяет юридическую консультацию. Политики GitHub и VPN-провайдера устанавливаются соответствующими сторонами.</span></p>
+    </article>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-bottom"><a class="brand" href="index.html"><img src="favicon.svg" alt="" width="32" height="32"><span>Slipstream <span class="brand-light">VPN</span></span></a><span>© <span data-current-year></span> Slipstream VPN</span><a href="downloads.html">Скачать</a></div></footer>
+</body>
+</html>

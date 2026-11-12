@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111019">
+  <meta name="description" content="Инструкция по установке и настройке Slipstream VPN на Android и Windows.">
+  <title>Инструкция — Slipstream VPN</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><div class="container header-inner">
+    <a class="brand" href="index.html"><img src="favicon.svg" alt="" width="40" height="40"><span>Slipstream <span class="brand-light">VPN</span></span></a>
+    <details class="mobile-nav"><summary aria-label="Открыть меню"><span></span><span></span><span></span></summary><nav class="nav nav-mobile" aria-label="Основная навигация"><a href="index.html">Главная</a><a href="downloads.html">Скачать</a><a aria-current="page" href="guide.html">Инструкция</a><a href="privacy.html">Конфиденциальность</a></nav></details>
+    <nav class="nav nav-desktop" aria-label="Основная навигация"><a href="index.html">Главная</a><a href="downloads.html">Скачать</a><a aria-current="page" href="guide.html">Инструкция</a><a href="privacy.html">Конфиденциальность</a></nav>
+    <a class="button button-small button-primary header-cta" href="downloads.html">Скачать</a>
+  </div></header>
+
+  <main class="container page-main">
+    <div class="breadcrumbs"><a href="index.html">Главная</a><span aria-hidden="true">/</span><span>Инструкция</span></div>
+    <section class="page-intro"><span class="eyebrow">Помощь и настройка</span><h1>Начните пользоваться VPN</h1><p class="lead">Ниже — настройка приложения и ответы на частые проблемы. Вам понадобятся данные действующего VPN-сервера.</p></section>
+
+    <nav class="guide-index" aria-label="Разделы инструкции"><a href="#android">Android</a><a href="#windows">Windows</a><a href="#troubleshooting">Если не подключается</a><a href="#faq">Частые вопросы</a></nav>
+
+    <section class="doc-section" id="android"><div class="doc-heading"><span class="doc-number">01</span><div><h2>Установка на Android</h2><p>Приложение запрашивает системное разрешение VPN при первом подключении.</p></div></div>
+      <ol class="instruction-list">
+        <li><strong>Скачайте APK</strong><p>Откройте страницу <a href="downloads.html">«Скачать»</a> и загрузите файл, если он доступен в официальном релизе.</p></li>
+        <li><strong>Установите приложение</strong><p>Откройте загруженный APK. Если Android попросит разрешение, разрешите установку приложений из используемого браузера или файлового менеджера. Устанавливайте только APK из доверенного релиза.</p></li>
+        <li><strong>Добавьте конфигурацию</strong><p>Вставьте ссылку или HTTPS-ссылку на подписку. Также можно отсканировать QR-код или выбрать его изображение.</p></li>
+        <li><strong>Сохраните профиль и подключитесь</strong><p>Выберите сервер и нажмите «Подключиться». Подтвердите системный запрос Android на создание VPN-подключения.</p></li>
+        <li><strong>Отключитесь, когда нужно</strong><p>Нажмите «Отключиться» в приложении или используйте постоянное уведомление Android.</p></li>
+      </ol>
+    </section>
+
+    <section class="doc-section" id="windows"><div class="doc-heading"><span class="doc-number">02</span><div><h2>Запуск на Windows</h2><p>Настольный клиент запускает установленный sing-box для создания системного туннеля.</p></div></div>
+      <ol class="instruction-list">
+        <li><strong>Установите Java 17</strong><p>Она необходима для запуска приложения. Используйте дистрибутив Java с официального сайта поставщика.</p></li>
+        <li><strong>Установите sing-box 1.13.11</strong><p>Скачайте версию с <a href="https://github.com/SagerNet/sing-box/releases/tag/v1.13.11" target="_blank" rel="noopener noreferrer">официальной страницы sing-box</a> для вашей архитектуры и распакуйте её.</p></li>
+        <li><strong>Распакуйте Slipstream</strong><p>Распакуйте ZIP-архив приложения в папку на компьютере.</p></li>
+        <li><strong>Запустите приложение</strong><p>Откройте <code>bin\desktop.bat</code>. Укажите путь к sing-box, если приложение не обнаружило его автоматически.</p></li>
+        <li><strong>Импортируйте профиль и подключитесь</strong><p>Вставьте ссылку или HTTPS-подписку и выберите «Импортировать». Для создания системного TUN-туннеля запустите приложение от имени администратора.</p></li>
+      </ol>
+      <aside class="notice"><span class="notice-symbol" aria-hidden="true">i</span><div>Настольная сборка в настоящее время предоставляется для Windows. Сборка для других систем не считается доступной, пока она не появится в официальных релизах.</div></aside>
+    </section>
+
+    <section class="doc-section" id="troubleshooting"><div class="doc-heading"><span class="doc-number">03</span><div><h2>Если не подключается</h2><p>Проверьте конфигурацию и доступность сервера.</p></div></div>
+      <div class="faq-list">
+        <details class="faq-item" open><summary>Проверьте сервер и ссылку профиля</summary><p>Убедитесь, что адрес, порт и протокол указаны верно, сервер включён, а профиль не устарел. Проверьте конфигурацию у её владельца.</p></details>
+        <details class="faq-item"><summary>Проверьте интернет и сеть</summary><p>Откройте обычную страницу без VPN. В некоторых сетях подключения к VPN-серверам или UDP-трафик блокируются.</p></details>
+        <details class="faq-item"><summary>Проверьте параметры TLS или Reality</summary><p>Для VLESS Reality сверяйте публичный ключ, short ID, SNI и отпечаток с исходной конфигурацией. Неверные параметры мешают установить защищённое соединение.</p></details>
+        <details class="faq-item"><summary>Windows сообщает об ошибке TUN или прав доступа</summary><p>Запустите приложение от имени администратора и проверьте, что выбран совместимый sing-box 1.13.11. Не запускайте одновременно несколько VPN-клиентов, изменяющих маршруты.</p></details>
+        <details class="faq-item"><summary>На Android не появляется запрос VPN</summary><p>Отключите уже запущенное VPN-подключение в системных настройках и повторите попытку. Android разрешает активное VPN-подключение только одному приложению одновременно.</p></details>
+      </div>
+      <p class="issue-note">Если проблема сохраняется, <a href="https://github.com/Nymos-oz/Slipstream-VPN-Downloads/issues" target="_blank" rel="noopener noreferrer">создайте обращение в GitHub</a>. Не отправляйте публично ссылки профилей, пароли, UUID или ключи.</p>
+    </section>
+
+    <section class="doc-section" id="faq"><div class="doc-heading"><span class="doc-number">04</span><div><h2>Частые вопросы</h2></div></div>
+      <div class="faq-list">
+        <details class="faq-item"><summary>Есть ли в приложении бесплатные VPN-серверы?</summary><p>Нет. Slipstream — приложение-клиент. Оно не предоставляет серверы, VPN-аккаунты или подписки.</p></details>
+        <details class="faq-item"><summary>Какие форматы профилей поддерживаются?</summary><p>Поддерживаются ссылки VLESS, VMess, Trojan, Shadowsocks, Hysteria2 и TUIC. Возможности конкретного сервера и расширения протокола могут различаться.</p></details>
+        <details class="faq-item"><summary>Как обновить Android-приложение?</summary><p>Используйте проверку обновлений в приложении или скачайте APK из официального релиза. Для обновления подпись файла должна совпадать с уже установленной сборкой.</p></details>
+        <details class="faq-item"><summary>Безопасно ли отправить профиль для поддержки?</summary><p>Ссылки профиля часто содержат секреты доступа. Не публикуйте их и не прикладывайте к общедоступному обращению. Сначала удалите пароли, UUID, ключи и адреса серверов.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-bottom"><a class="brand" href="index.html"><img src="favicon.svg" alt="" width="32" height="32"><span>Slipstream <span class="brand-light">VPN</span></span></a><span>© <span data-current-year></span> Slipstream VPN</span><a href="privacy.html">Конфиденциальность</a></div></footer>
+</body>
+</html>
