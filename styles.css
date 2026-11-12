@@ -180,6 +180,11 @@ h1, h2, h3, p { overflow-wrap: anywhere; }
 .card-action { margin-top: auto; padding-top: 22px; }
 .card-action .button { width: 100%; }
 .download-status { min-height: 1.45em; margin: 10px 0 0; color: var(--muted); font-size: .8rem; }
+.checksum { display: grid; gap: 5px; margin-top: 16px; color: var(--muted); font-size: .82rem; }
+.checksum[hidden] { display: none; }
+.checksum code { overflow-wrap: anywhere; color: var(--text); }
+.checksum-copy { justify-self: start; padding: 3px 0; border: 0; background: none; color: var(--accent); font: inherit; cursor: pointer; }
+.checksum .download-status { min-height: 0; margin: 0; }
 
 .notice { display: flex; gap: 13px; margin-top: 15px; padding: 15px 17px; border: 1px solid rgba(201,184,255,.15); border-radius: 17px; background: rgba(201,184,255,.05); color: var(--muted); font-size: .89rem; }
 .notice strong { color: var(--text); }
