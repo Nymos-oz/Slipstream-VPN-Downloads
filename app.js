@@ -61,6 +61,25 @@
     document.getElementById(view.badge).classList.add("badge-live");
     document.getElementById(view.version).textContent = `Версия ${version}`;
     document.getElementById(view.size).textContent = formatSize(asset.size);
+
+    if (platform === "android" && /^sha256:[a-f0-9]{64}$/i.test(asset.digest || "")) {
+      const checksum = asset.digest.slice("sha256:".length).toLowerCase();
+      const checksumPanel = document.getElementById("android-checksum");
+      const checksumValue = document.getElementById("android-sha256");
+      const copyButton = document.getElementById("android-sha256-copy");
+      const copyStatus = document.getElementById("android-sha256-status");
+      checksumValue.textContent = checksum;
+      checksumPanel.hidden = false;
+      copyButton.addEventListener("click", async () => {
+        try {
+          if (!navigator.clipboard) throw new Error("Clipboard API unavailable");
+          await navigator.clipboard.writeText(checksum);
+          copyStatus.textContent = "SHA-256 скопирован.";
+        } catch {
+          copyStatus.textContent = "Не удалось скопировать. Выделите и скопируйте хеш выше.";
+        }
+      });
+    }
   };
 
   fetch(`https://api.github.com/repos/${releaseRepository}/releases/latest`, {
